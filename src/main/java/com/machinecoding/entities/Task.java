@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import org.apache.commons.lang3.StringUtils;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -20,11 +22,13 @@ public class Task {
   private String assignee;
 
   @NotNull
-  private State status;
+  private String status;
 
   private String type;
 
   private String dueDate;
 
-  private String sprint;
+  private String metaData = StringUtils.EMPTY;
+
+  private String sprint = StringUtils.EMPTY;
 }

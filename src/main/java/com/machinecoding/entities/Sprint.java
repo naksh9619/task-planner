@@ -1,4 +1,6 @@
-package com.machinecoding.entities.feature;
+package com.machinecoding.entities;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Feature {
+public class Sprint {
 
-  private String summary;
-
-  private FeatureImpact impact;
+  private List<Task> tasks;
 }

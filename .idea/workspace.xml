@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54197929-5a70-4f01-9442-68a1b109e30d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/AbstractTaskManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/BugManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/FeatureManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/StoryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/TaskManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/entities/Sprint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/AbstractTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/AbstractTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/BugManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/BugManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/FeatureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/FeatureManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/StoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/StoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/core/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/entities/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/entities/feature/Feature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/entities/feature/Feature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/entities/story/Subtrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/entities/story/Subtrack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/SprintManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/SprintManagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/SprintManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/SprintManagerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/TaskManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/TaskManagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/TaskManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/service/TaskManagerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/machinecoding/utils/TaskPlannerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/machinecoding/utils/TaskPlannerUtils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +37,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
