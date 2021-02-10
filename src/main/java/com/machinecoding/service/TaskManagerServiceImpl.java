@@ -1,6 +1,5 @@
 package com.machinecoding.service;
 
-import static com.machinecoding.utils.TaskPlannerUtils.createTask;
 import static com.machinecoding.utils.TaskPlannerUtils.getTaskByTaskId;
 import static com.machinecoding.utils.TaskPlannerUtils.getUniqueId;
 import static com.machinecoding.utils.TaskPlannerUtils.isTaskTypeStory;
@@ -38,13 +37,8 @@ public class TaskManagerServiceImpl implements TaskManagerService {
   @Override
   public String createNewTask(String title, String creator, String assignee,
                               String type, String dueDate, Map<String, String> metadata) {
-    Task task = createTask(title, creator, assignee, type, dueDate);
     TaskManager taskManager = getTaskManagerByTaskType(type);
-    boolean taskCreated = taskManager.createTask(task);
-    if (!taskCreated) {
-      log.error("Unable to create task");
-      throw new TaskPlannerException("Exception occurred while trying to create task of type " + type);
-    }
+    Task task = taskManager.createTask(title, creator, assignee, type, dueDate, metadata);
     String taskId = getUniqueId();
     allTasks.put(taskId, task);
     return taskId;

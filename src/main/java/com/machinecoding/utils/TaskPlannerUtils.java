@@ -17,7 +17,7 @@ public class TaskPlannerUtils {
 
   }
 
-  public static Task createTask(String title, String creator, String assignee, String type, String dueDate) {
+  public static Task createTaskRequest(String title, String creator, String assignee, String type, String dueDate) {
     Task task = new Task();
     task.setType(type);
     task.setTitle(title);

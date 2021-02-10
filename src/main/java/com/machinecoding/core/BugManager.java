@@ -10,15 +10,20 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.stereotype.Component;
 
+import static com.machinecoding.utils.TaskPlannerUtils.createTaskRequest;
+
 @Slf4j
 @Component("bug")
 public class BugManager extends AbstractTaskManager {
+
   public BugManager() {
   }
 
   @Override
-  public boolean createTask(Task task) {
-    return false;
+  public Task createTask(String title, String creator, String assignee,
+                            String type, String dueDate, Map<String, String> metadata) {
+    Task task = createTaskRequest(title, creator, assignee, type, dueDate);
+    return task;
   }
 
   @Override
@@ -27,7 +32,7 @@ public class BugManager extends AbstractTaskManager {
   }
 
   @Override
-  protected Map<String, String> getNextStatesMap() {
+  protected Map<String, String> createNextStateMap() {
     Map<String, String> stateMap = new HashMap<>();
     stateMap.put(State.OPEN.getState(), State.TO_DO.getState());
     stateMap.put(State.TO_DO.getState(), State.IN_PROGRESS.getState());

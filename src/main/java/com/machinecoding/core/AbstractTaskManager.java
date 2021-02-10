@@ -16,9 +16,9 @@ public abstract class AbstractTaskManager implements TaskManager {
       log.error("Task already in terminal state.");
       throw new TaskPlannerException("Unable to update task state. Task already in terminal state");
     }
-    Map<String, String> nextStateMap = getNextStatesMap();
+    Map<String, String> nextStateMap = createNextStateMap();
     task.setStatus(nextStateMap.get(currentTaskStatus));
   }
 
-  protected abstract Map<String, String> getNextStatesMap();
+  protected abstract Map<String, String> createNextStateMap();
 }
