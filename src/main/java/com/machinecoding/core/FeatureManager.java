@@ -3,7 +3,6 @@ package com.machinecoding.core;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.machinecoding.common.TaskPlannerException;
 import com.machinecoding.entities.State;
 import com.machinecoding.entities.Task;
 
@@ -15,10 +14,7 @@ import org.springframework.stereotype.Component;
 @Component("feature")
 public class FeatureManager extends AbstractTaskManager {
 
-  private Map<String, String> nextStateMap;
-
   public FeatureManager() {
-    nextStateInitializer();
   }
 
   @Override
@@ -27,26 +23,16 @@ public class FeatureManager extends AbstractTaskManager {
   }
 
   @Override
-  public void changeTaskStatus(Task task) {
-
-    String currentTaskStatus = task.getStatus();
-    if (taskInTerminalState(currentTaskStatus)) {
-      log.error("Task already in terminal state.");
-      throw new TaskPlannerException("Unable to update task state. Task already in terminal state");
-    }
-    task.setStatus(nextStateMap.get(currentTaskStatus));
-  }
-
-  @Override
   public boolean taskInTerminalState(String taskState) {
     return taskState.equals(State.DEPLOYED.getState());
   }
 
-  public void nextStateInitializer() {
+  @Override
+  protected Map<String, String> getNextStatesMap() {
     Map<String, String> stateMap = new HashMap<>();
     stateMap.put(State.OPEN.getState(), State.IN_PROGRESS.getState());
     stateMap.put(State.IN_PROGRESS.getState(), State.TESTING.getState());
     stateMap.put(State.TESTING.getState(), State.DEPLOYED.getState());
-    this.nextStateMap = stateMap;
+    return stateMap;
   }
 }

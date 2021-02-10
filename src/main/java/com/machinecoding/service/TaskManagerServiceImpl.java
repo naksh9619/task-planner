@@ -23,7 +23,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class TaskManagerServiceImpl implements TaskManagerService {
 
-
   private Map <String, Task> allTasks;
 
   private Map<String, Subtrack> subTracks;
@@ -32,12 +31,13 @@ public class TaskManagerServiceImpl implements TaskManagerService {
 
   public TaskManagerServiceImpl(Map<String, TaskManager> taskManagerMap) {
     this.taskManagerMap = taskManagerMap;
-    this.allTasks = new HashMap<String, Task>();
-    this.subTracks = new HashMap<String, Subtrack>();
+    this.allTasks = new HashMap<>();
+    this.subTracks = new HashMap<>();
   }
 
   @Override
-  public String createNewTask(String title, String creator, String assignee, String type, String dueDate) {
+  public String createNewTask(String title, String creator, String assignee,
+                              String type, String dueDate, Map<String, String> metadata) {
     Task task = createTask(title, creator, assignee, type, dueDate);
     TaskManager taskManager = getTaskManagerByTaskType(type);
     boolean taskCreated = taskManager.createTask(task);
@@ -75,11 +75,11 @@ public class TaskManagerServiceImpl implements TaskManagerService {
 
   @Override
   public void printAllTasksByAssignee() {
-    Map < String, List<Task> > allTasksByAssignee = new HashMap<String, List<Task>>();
+    Map < String, List<Task> > allTasksByAssignee = new HashMap<>();
     for (Task task: allTasks.values()) {
       List<Task> tasksByAssignee = allTasksByAssignee.get(task.getAssignee());
-      if (tasksByAssignee == null) {
-        tasksByAssignee = new ArrayList<Task>();
+      if (tasksByAssignee.isEmpty()) {
+        tasksByAssignee = new ArrayList<>();
       }
       tasksByAssignee.add(task);
     }

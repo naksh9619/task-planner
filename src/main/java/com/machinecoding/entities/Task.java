@@ -28,7 +28,5 @@ public class Task {
 
   private String dueDate;
 
-  private String metaData = StringUtils.EMPTY;
-
   private String sprint = StringUtils.EMPTY;
 }
